@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TARANGANA SURESH KAMBLE — Senior QA Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #667eea 100%);
+            background-attachment: fixed;
+            color: #1a1a2e;
+            line-height: 1.8;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* KEYFRAME ANIMATIONS */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+            }
+            50% {
+                text-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.8;
+                transform: scale(1.05);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        /* HEADER */
+        header {
+            padding: 80px 50px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-bottom: 3px solid rgba(255, 255, 255, 0.2);
+            animation: slideInDown 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+
+        .header-title {
+            font-size: 64px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 15px;
+            animation: glow 3s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+            letter-spacing: -1px;
+        }
+
+        .header-subtitle {
+            font-size: 20px;
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 30px;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+        }
+
+        .header-meta {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        .meta-item {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .meta-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+
+        /* SECTIONS */
+        .section {
+            margin: 60px 0;
+            padding: 50px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            animation: slideInUp 0.8s ease-out;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .section:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+        }
+
+        .section-marker {
+            font-size: 11px;
+            color: #667eea;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: #1a1a2e;
+            margin-bottom: 40px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 6px;
+            height: 36px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            border-radius: 3px;
+        }
+
+        /* STATS */
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
+        }
+
+        .stat-item {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            color: white;
+            animation: slideInUp 0.6s ease-out backwards;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-item::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .stat-item:hover {
+            transform: translateY(-12px) scale(1.05);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 8px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            font-weight: 600;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* SUMMARY */
+        .summary-box {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.12) 0%, rgba(118, 75, 162, 0.08) 100%);
+            padding: 30px 35px;
+            border-radius: 12px;
+            border-left: 5px solid #667eea;
+            margin: 30px 0;
+        }
+
+        .summary-box p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #2d3748;
+        }
+
+        .summary-box strong {
+            color: #667eea;
+        }
+
+        /* TIMELINE */
+        .timeline-item {
+            margin: 35px 0;
+            padding: 30px;
+            border-left: 4px solid #667eea;
+            border-radius: 8px;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.02) 100%);
+            transition: all 0.3s ease;
+            animation: slideInLeft 0.7s ease-out backwards;
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '✓';
+            position: absolute;
+            left: -18px;
+            top: 35px;
+            width: 32px;
+            height: 32px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .timeline-item:hover {
+            border-left-color: #764ba2;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.12) 0%, rgba(118, 75, 162, 0.08) 100%);
+            transform: translateX(8px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.1);
+        }
+
+        .job-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 8px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .company-info {
+            font-size: 16px;
+            color: #764ba2;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .date-info {
+            font-size: 13px;
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .description {
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+
+        .achievements {
+            list-style: none;
+        }
+
+        .achievements li {
+            padding: 10px 0;
+            padding-left: 25px;
+            color: #4a5568;
+            position: relative;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .achievements li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 12px;
+            margin: 30px 0;
+        }
+
+        .skill-badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 14px 18px;
+            border-radius: 25px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            animation: slideInUp 0.6s ease-out backwards;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-badge::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .skill-badge:hover {
+            transform: translateY(-8px) scale(1.08);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.35);
+        }
+
+        .skill-badge:hover::before {
+            right: -25%;
+            top: -25%;
+        }
+
+        /* TOOLS */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .tool-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.05) 100%);
+            border: 2px solid #667eea;
+            padding: 28px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            animation: slideInUp 0.7s ease-out backwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .tool-card::before {
+            content: '';
+            position: absolute;
+            top: -100%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            transition: top 0.5s;
+        }
+
+        .tool-card:hover::before {
+            top: 100%;
+        }
+
+        .tool-card:hover {
+            border-color: #764ba2;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.15) 100%);
+            transform: translateY(-12px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+        }
+
+        .tool-name {
+            font-size: 18px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 12px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .tool-description {
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        /* DOMAINS */
+        .domains-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin: 30px 0;
+        }
+
+        .domain-tag {
+            background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+            color: white;
+            padding: 14px;
+            border-radius: 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            animation: slideInUp 0.6s ease-out backwards;
+            box-shadow: 0 5px 15px rgba(118, 75, 162, 0.2);
+            cursor: pointer;
+        }
+
+        .domain-tag:hover {
+            transform: translateY(-8px) scale(1.1);
+            box-shadow: 0 15px 35px rgba(118, 75, 162, 0.3);
+        }
+
+        /* STRENGTHS */
+        .strengths-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .strength-card {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.15) 0%, rgba(118, 75, 162, 0.1) 100%);
+            border: 2px solid rgba(102, 126, 234, 0.3);
+            padding: 28px;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            animation: slideInUp 0.7s ease-out backwards;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strength-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.2) 0%, transparent 70%);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .strength-card:hover {
+            border-color: #667eea;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.25) 0%, rgba(118, 75, 162, 0.2) 100%);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 45px rgba(102, 126, 234, 0.2);
+        }
+
+        .strength-card:hover::before {
+            right: -25%;
+            top: -25%;
+        }
+
+        .strength-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 12px;
+            font-family: 'Poppins', sans-serif;
+            position: relative;
+            z-index: 1;
+        }
+
+        .strength-desc {
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.6;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* FOOTER */
+        footer {
+            margin-top: 80px;
+            padding: 60px 50px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(20px);
+            border-top: 3px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+            animation: slideInUp 0.8s ease-out;
+            color: white;
+        }
+
+        footer h3 {
+            font-size: 28px;
+            font-weight: 800;
+            margin-bottom: 30px;
+            animation: glow 3s ease-in-out infinite;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 35px;
+            flex-wrap: wrap;
+            margin-bottom: 30px;
+        }
+
+        .contact-item {
+            font-size: 15px;
+            color: rgba(255, 255, 255, 0.95);
+        }
+
+        .contact-item a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .contact-item a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #ffffff;
+            transition: width 0.3s ease;
+        }
+
+        .contact-item a:hover::after {
+            width: 100%;
+        }
+
+        .footer-text {
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 30px;
+            font-weight: 500;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 25px;
+            }
+
+            header {
+                padding: 50px 25px;
+            }
+
+            .header-title {
+                font-size: 42px;
+            }
+
+            .header-subtitle {
+                font-size: 16px;
+            }
+
+            .section {
+                padding: 30px;
+                margin: 40px 0;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+
+            .header-meta {
+                gap: 15px;
+            }
+
+            .skills-grid,
+            .tools-grid,
+            .domains-grid,
+            .strengths-grid,
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+
+        /* ANIMATIONS */
+        .scroll-animate {
+            opacity: 0;
+            animation: slideInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <h1 class="header-title">TARANGANA SURESH KAMBLE</h1>
+        <p class="header-subtitle">Senior QA Engineer | Manual & Automation Testing | Capital Markets Specialist</p>
+        <div class="header-meta">
+            <div class="meta-item">📧 31kamble@gmail.com</div>
+            <div class="meta-item">📱 +91 9594793922</div>
+            <div class="meta-item">📍 Mumbai, India</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- SECTION 01: PROFESSIONAL SUMMARY -->
+        <section class="section">
+            <div class="section-marker">SECTION_01 // PROFESSIONAL SUMMARY</div>
+            <h2 class="section-title">OVERVIEW</h2>
+            
+            <div class="stats-container">
+                <div class="stat-item">
+                    <div class="stat-number">4+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Companies</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">19</div>
+                    <div class="stat-label">Core Skills</div>
+                </div>
+            </div>
+
+            <div class="summary-box">
+                <p>Passionate QA Engineer with extensive expertise in manual testing, test automation, and quality assurance across the financial domain. Proven track record of delivering high-quality testing solutions for complex capital markets and mutual fund applications. Strong analytical skills with ability to design comprehensive test strategies, identify critical defects, and collaborate effectively with cross-functional teams.</p>
+            </div>
+
+            <div class="summary-box" style="border-left-color: #764ba2;">
+                <p><strong>OBJECTIVE:</strong> To bring proven QA expertise in capital markets, mutual funds, and financial applications to a forward-thinking team that needs release confidence and quality excellence in high-impact user journeys.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 02: EXPERIENCE -->
+        <section class="section">
+            <div class="section-marker">SECTION_02 // PROFESSIONAL EXPERIENCE</div>
+            <h2 class="section-title">CAREER TIMELINE</h2>
+
+            <div class="timeline-item">
+                <div class="job-title">Quality Assurance Tester / Senior Test Engineer</div>
+                <div class="company-info">Motilal Oswal Financial Services (MOFSL)</div>
+                <div class="date-info">MAY 2023 – PRESENT (3+ Years) | Offsite</div>
+                <div class="description">Leading QA initiatives across 5 mission-critical projects in capital markets and mutual funds domain. Responsible for end-to-end quality assurance including requirement analysis, test planning, execution, defect management, and UAT coordination.</div>
+                <ul class="achievements">
+                    <li>Executed comprehensive functional, regression, and smoke testing across web and mobile platforms</li>
+                    <li>Designed and implemented detailed test scenarios covering complex mutual fund workflows and order management</li>
+                    <li>Managed complete defect lifecycle with meticulous tracking and verification using JIRA and Zoho</li>
+                    <li>Performed backend validation and database testing using SQL for data integrity checks</li>
+                    <li>Collaborated with developers and stakeholders to clarify requirements and resolve critical issues</li>
+                    <li>Contributed to UAT and production testing ensuring smooth deployments</li>
+                </ul>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">Quality Assurance Tester</div>
+                <div class="company-info">AlfaLabs Technologies</div>
+                <div class="date-info">AUG 2021 – APR 2023 (1 Year 9 Months)</div>
+                <div class="description">Performed comprehensive manual and functional testing for investor applications and trading platforms. Developed deep expertise in Private Wealth Management (PWM) business processes and order management systems.</div>
+                <ul class="achievements">
+                    <li>Conducted smoke, sanity, regression, and end-to-end testing on investor applications</li>
+                    <li>Created detailed test scenarios and test cases based on functional requirements</li>
+                    <li>Identified and tracked defects using JIRA with proper categorization and root cause analysis</li>
+                    <li>Participated in complete STLC from requirement analysis through release validation</li>
+                    <li>Collaborated with developers and business analysts for requirement clarification</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SECTION 03: PROJECTS -->
+        <section class="section">
+            <div class="section-marker">SECTION_03 // PROJECTS & INITIATIVES</div>
+            <h2 class="section-title">KEY PROJECTS</h2>
+
+            <div class="timeline-item">
+                <div class="job-title">MFD Physical Order Placement</div>
+                <div class="date-info">JAN 2026 – PRESENT</div>
+                <div class="description">MF order placement for dealers through DION platform. Tested transactions: Purchase, Redemption, Switch, SIP Registration, STP, SWP with KYC, PAN, folio, scheme eligibility, and cut-off time validations.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">MOPW RIISE Application – Mutual Fund & Equity Orders</div>
+                <div class="date-info">SEP 2025 – PRESENT</div>
+                <div class="description">Validated MOPW (Wealth) tabs for Mutual Fund and Equity order placement. Tested end-to-end trading journey with module integration and back-office connectivity validation.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">New Backoffice – Miles Platform</div>
+                <div class="date-info">OCT 2024 – SEP 2025</div>
+                <div class="description">Wealth management platform supporting Mutual Funds, Equity, Bonds, PMS, AIF, SIP, SWP, STP. Performed requirement analysis, testing of Client Creation, Security, MF Reconciliation, Order Management with SQL validation.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">Client Portal – Investor Dashboard</div>
+                <div class="date-info">SEP 2023 – MAY 2024</div>
+                <div class="description">End-to-end QA for investor dashboard with real-time portfolio tracking, transaction history, and fund performance analytics.</div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="job-title">BSE Star MF – Mutual Fund Transaction Platform</div>
+                <div class="date-info">DEC 2021 – AUG 2023</div>
+                <div class="description">BSE Mutual Fund Systematic Transaction Aggregation Router. Tested comprehensive MF workflows for order placement, processing, and settlement with automation tools.</div>
+            </div>
+        </section>
+
+        <!-- SECTION 04: CORE COMPETENCIES -->
+        <section class="section">
+            <div class="section-marker">SECTION_04 // CORE COMPETENCIES</div>
+            <h2 class="section-title">VERIFIED SKILLS (19)</h2>
+
+            <div class="skills-grid">
+                <div class="skill-badge">Manual Testing</div>
+                <div class="skill-badge">Functional Testing</div>
+                <div class="skill-badge">Regression Testing</div>
+                <div class="skill-badge">Smoke Testing</div>
+                <div class="skill-badge">Test Case Design</div>
+                <div class="skill-badge">Test Automation</div>
+                <div class="skill-badge">Mobile App Testing</div>
+                <div class="skill-badge">Cross-Browser Testing</div>
+                <div class="skill-badge">Defect Tracking</div>
+                <div class="skill-badge">Database Testing</div>
+                <div class="skill-badge">UAT Support</div>
+                <div class="skill-badge">Requirements Analysis</div>
+                <div class="skill-badge">End-to-End Testing</div>
+                <div class="skill-badge">Test Planning</div>
+                <div class="skill-badge">Root Cause Analysis</div>
+                <div class="skill-badge">Agile Methodology</div>
+                <div class="skill-badge">Capital Markets</div>
+                <div class="skill-badge">Mutual Funds</div>
+                <div class="skill-badge">Financial Services</div>
+            </div>
+        </section>
+
+        <!-- SECTION 05: TOOLS & TECHNOLOGIES -->
+        <section class="section">
+            <div class="section-marker">SECTION_05 // TECHNOLOGY STACK</div>
+            <h2 class="section-title">TOOLS & TECHNOLOGIES</h2>
+
+            <div class="tools-grid">
+                <div class="tool-card">
+                    <div class="tool-name">Fireflink</div>
+                    <div class="tool-description">Advanced automation tool for comprehensive functional testing and regression suite execution with intelligent reporting.</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">BrowserStack</div>
+                    <div class="tool-description">Cross-browser and device testing platform for validating application behavior across real browsers and mobile combinations.</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">JIRA</div>
+                    <div class="tool-description">Defect tracking and project management tool for logging, tracking, and triaging issues through complete lifecycle.</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">Zoho</div>
+                    <div class="tool-description">Test case management and defect tracking system for comprehensive test documentation and quality metrics.</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">SQL & Database</div>
+                    <div class="tool-description">Backend validation and data integrity testing through direct database queries and integrity checks.</div>
+                </div>
+                <div class="tool-card">
+                    <div class="tool-name">Browser DevTools</div>
+                    <div class="tool-description">Frontend debugging and inspection for network analysis, console errors, and element-level issue investigation.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 06: DOMAIN EXPERTISE -->
+        <section class="section">
+            <div class="section-marker">SECTION_06 // DOMAIN EXPERTISE</div>
+            <h2 class="section-title">PLATFORMS & DOMAINS</h2>
+
+            <div class="domains-grid">
+                <div class="domain-tag">Capital Markets</div>
+                <div class="domain-tag">Mutual Funds</div>
+                <div class="domain-tag">Financial Services</div>
+                <div class="domain-tag">Order Management</div>
+                <div class="domain-tag">Back Office</div>
+                <div class="domain-tag">Private Wealth Management</div>
+                <div class="domain-tag">Trading Platforms</div>
+                <div class="domain-tag">Investor Portals</div>
+                <div class="domain-tag">Payment Systems</div>
+            </div>
+        </section>
+
+        <!-- SECTION 07: KEY STRENGTHS -->
+        <section class="section">
+            <div class="section-marker">SECTION_07 // KEY STRENGTHS</div>
+            <h2 class="section-title">CORE COMPETENCIES</h2>
+
+            <div class="strengths-grid">
+                <div class="strength-card">
+                    <div class="strength-title">🎯 Analytical Thinking</div>
+                    <div class="strength-desc">Breaking down complex requirements into detailed test scenarios and identifying edge cases before they become production issues.</div>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-title">🔍 Meticulous Testing</div>
+                    <div class="strength-desc">Comprehensive test coverage across functional, regression, and smoke testing with attention to detail in defect documentation.</div>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-title">💬 Clear Communication</div>
+                    <div class="strength-desc">Articulating complex issues and test findings clearly to developers, stakeholders, and cross-functional teams.</div>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-title">⚡ Quick Learning</div>
+                    <div class="strength-desc">Rapidly mastering new domains, tools, and technologies including capital markets and mutual fund business processes.</div>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-title">🤝 Team Collaboration</div>
+                    <div class="strength-desc">Working seamlessly with developers, business analysts, and stakeholders to ensure quality from requirement through release.</div>
+                </div>
+                <div class="strength-card">
+                    <div class="strength-title">📈 Continuous Growth</div>
+                    <div class="strength-desc">Always upgrading skills and expertise, exploring automation tools and advanced QA methodologies to enhance value delivery.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 08: EDUCATION -->
+        <section class="section">
+            <div class="section-marker">SECTION_08 // EDUCATION</div>
+            <h2 class="section-title">ACADEMIC BACKGROUND</h2>
+
+            <div class="timeline-item">
+                <div class="job-title">Bachelor of Engineering</div>
+                <div class="company-info">Information Technology</div>
+                <div class="date-info">Graduated: 2021</div>
+                <div class="description">Solid foundation in computer science fundamentals, data structures, and software development principles that support QA expertise.</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <h3>Let's Build Quality Together ✨</h3>
+        
+        <div class="contact-info">
+            <div class="contact-item">📧 <a href="mailto:31kamble@gmail.com">31kamble@gmail.com</a></div>
+            <div class="contact-item">📱 <a href="tel:+919594793922">+91 9594793922</a></div>
+            <div class="contact-item">📍 Mumbai, India</div>
+        </div>
+
+        <div class="footer-text">
+            <p>© TARANGANA SURESH KAMBLE • SENIOR QA ENGINEER • BUILT WITH PRECISION & PASSION</p>
+        </div>
+    </footer>
+
+    <script>
+        // SCROLL ANIMATIONS
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideInUp 0.8s ease-out forwards';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.timeline-item, .tool-card, .strength-card, .skill-badge, .domain-tag').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
